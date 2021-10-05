@@ -14,6 +14,7 @@ public class SortableTest extends BaseInteractionsTest {
 //        sortable.pullItemUp();
 //    }
 //TODO moveto target parametryzowane - masz przyjmować od użytkownika który item w które miejsce.
+    //TODO getTextsOfSortableItems() - unfinished method
 
     @Test
     public void moveToTargetTest() {

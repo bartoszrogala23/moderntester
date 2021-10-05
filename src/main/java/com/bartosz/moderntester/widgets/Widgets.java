@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class Widgets {
@@ -39,6 +40,8 @@ public class Widgets {
     private WebElement tabsSelect;
     @FindBy(css = "#tooltip-item")
     private WebElement tooltipSelect;
+    @FindBy(css = "#progressbar")
+    private WebElement progressbar;
 
     public void goToSpinner() {
         widgetsDropdown.click();
