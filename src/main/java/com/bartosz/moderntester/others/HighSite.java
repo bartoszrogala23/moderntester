@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class HighSite {
-    private WebDriver driver;
+    private final WebDriver driver;
 
     public HighSite(WebDriver driver) {
         this.driver = driver;

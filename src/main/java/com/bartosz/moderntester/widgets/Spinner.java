@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class Spinner {
-    private WebDriver driver;
+    private final WebDriver driver;
 
     public Spinner(WebDriver driver) {
         this.driver = driver;
@@ -15,19 +15,10 @@ public class Spinner {
 
     @FindBy(css = ".ui-icon-triangle-1-n")
     private WebElement triangleAddValueButton;
-
     @FindBy(css = "#spinner")
     public WebElement spinnerField;
-
-    @FindBy(css = "#disable")
-    private WebElement disbaleButton;
-
-    @FindBy(css = "#disable")
-    private WebElement disableEnableWidgetButton;
-
     @FindBy(css = "#getvalue")
     private WebElement getValueButton;
-
     @FindBy(css = "#setvalue")
     private WebElement setValueAs5;
 
@@ -37,10 +28,6 @@ public class Spinner {
 
     public void setSpinnerField(int number) {
         spinnerField.sendKeys(String.valueOf(number));
-    }
-
-    public void toggleDisableEnable() {
-        disableEnableWidgetButton.click();
     }
 
     public void getValueAsAlert() {
@@ -58,6 +45,4 @@ public class Spinner {
     public String getStatusfromAlert() {
         return driver.switchTo().alert().getText();
     }
-
-
 }
