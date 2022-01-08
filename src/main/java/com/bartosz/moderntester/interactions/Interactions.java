@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-
 public class Interactions {
 
     public Interactions(WebDriver driver) {
@@ -24,11 +23,6 @@ public class Interactions {
     private WebElement droppableSelect;
     @FindBy(css = "#draggable-item")
     private WebElement draggableSelect;
-    @FindBy(css = "#sortable-item")
-    private WebElement sortableSelect;
-    @FindBy(css = "#draggable")
-    WebElement draggableObject;
-
 
     public void goToDraggable() {
         interactionsDropdown.click();

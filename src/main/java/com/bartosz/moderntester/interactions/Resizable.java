@@ -23,11 +23,14 @@ public class Resizable {
 
     public void resizeTheElement() {
         Actions actions = new Actions(driver);
-        actions.clickAndHold(resizeCornerElement).moveByOffset(300,90).release().build().perform();
+        actions.clickAndHold(resizeCornerElement)
+                .moveByOffset(300,90)
+                .release()
+                .build()
+                .perform();
     }
 
     public Dimension getSize(){
         return rectangleElement.getSize();
     }
-
 }

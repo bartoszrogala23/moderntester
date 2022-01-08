@@ -23,21 +23,9 @@ public class Sortable {
     @FindBy(xpath = "//li[contains(text(), 7)]")
     private WebElement item7;
 
-    @FindBy(xpath = "[type=\"text/css\"]")
-    private WebElement items;
-
-
-
-
     public List<String> getTextsOfSortableItems() {
-//        List<WebElement> foundElements = driver.findElements(By.cssSelector("li.ui-sortable-handle"));
-//        List<String> result = new ArrayList<>();
-//        for (int i = 0; i < foundElements.size(); i++) {
-//            result.add(foundElements.get(i).getText());
-//        }
-//        return result;
         return driver.findElements(By.cssSelector("li.ui-sortable-handle")).stream()
-                .map((webElement) -> webElement.getText())
+                .map(WebElement::getText)
                 .collect(Collectors.toList());
     }
 
@@ -55,20 +43,4 @@ public class Sortable {
         Actions actions = new Actions(driver);
         actions.clickAndHold(item7).moveToElement(item1).release().build().perform();
     }
-
-
-//    TODO = #tomek_pomusz
-    public void pullItemtoTargetSelectable(int itemNumberToMove, int itemNumberDestination) {
-        WebElement itemFrom = driver.findElement(
-//                masz problem z łączeniem Stringów
-                By.cssSelector( "//li[contains(text(), " + itemNumberToMove + ")]" ));
-        WebElement itemTo = driver.findElement(
-                By.cssSelector( "//li[contains(text(), " + itemNumberDestination + ")]"));
-        Actions actions = new Actions(driver);
-        actions.clickAndHold(itemFrom).moveToElement(itemTo).release().build().perform();
-    }
-
-
-
-
 }
