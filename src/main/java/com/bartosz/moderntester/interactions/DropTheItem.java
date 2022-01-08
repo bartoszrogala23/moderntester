@@ -16,17 +16,11 @@ public class DropTheItem {
 
     @FindBy(css = "#draggable")
     private WebElement draggableItem;
-    @FindBy(xpath = "//div[@id='droppable']")
-    public WebElement expectedArea;
     @FindBy(css = "#droppable")
     public WebElement droppable;
-
-
-
 
     public void dropIntoRectangle() {
         Actions actions = new Actions(driver);
         actions.dragAndDropBy(draggableItem,180,60).build().perform();
     }
-
 }

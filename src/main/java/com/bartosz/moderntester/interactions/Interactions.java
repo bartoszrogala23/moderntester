@@ -7,10 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 
 public class Interactions {
-    private final WebDriver driver;
 
     public Interactions(WebDriver driver) {
-        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 

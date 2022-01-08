@@ -1,15 +1,10 @@
 package com.bartosz.moderntester.basic;
 
-import com.github.javafaker.Faker;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Alerts {
@@ -28,8 +23,6 @@ public class Alerts {
     private WebElement promptPopUp;
     @FindBy(css = "#confirm-alert")
     private WebElement confirmPopUp;
-    @FindBy(css = "#delayed-alert")
-    private WebElement DelayedAlert;
     @FindBy(css = "#simple-alert-label")
     public WebElement simpleAlertStatus;
     @FindBy(css = "#prompt-label")
@@ -63,6 +56,4 @@ public class Alerts {
         promptPopUp.click();
         driver.switchTo().alert().dismiss();
     }
-
-
 }

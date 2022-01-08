@@ -25,9 +25,8 @@ public class Draggable {
     }
 
     public Point getPointPosition() {
-        Point point = new Point(
+        return new Point(
                 draggableObject.getLocation().x,
                 draggableObject.getLocation().y);
-        return point;
     }
 }
