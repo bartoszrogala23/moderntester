@@ -11,6 +11,5 @@ public class DroppableTest extends BaseInteractionsTest {
         dropTheItem.dropIntoRectangle();
         String actualMessage = dropTheItem.droppable.getText();
         assertThat(actualMessage).isEqualTo(expectedMessage);
-
     }
 }

@@ -6,13 +6,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class AutofillTest extends BaseWidgetsTest{
 
-
     @Test
     public void autofillTest() {
         widgets.goToAutocomplete();
         List<String> autocompleteResult = autocomplete.fillTheSearchFieldWithText("a");
-        assertThat(autocompleteResult).hasSize(9).contains("andreas", "antal");
+        assertThat(autocompleteResult)
+                .hasSize(9)
+                .contains("andreas", "antal");
     }
-
-
 }

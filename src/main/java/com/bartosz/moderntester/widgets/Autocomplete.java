@@ -5,16 +5,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Autocomplete {
-    private WebDriver driver;
+    private final WebDriver driver;
 
     public Autocomplete(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
+//        zamiast driver możesz wrzucić webelement i
+//        wtedy nie szuka Ci po całej stronie tylko wewnątrz Webelementu
     }
 
     @FindBy(css = "#search")
@@ -23,11 +24,6 @@ public class Autocomplete {
     public List<String> fillTheSearchFieldWithText(String text) {
         searchField.sendKeys(text);
         List<WebElement> foundElements = driver.findElements(By.cssSelector(".ui-menu-item"));
-        List<String> foundResults = new ArrayList<String>();
-        for(int i = 0; i < foundElements.size(); i ++) {
-            foundResults.add(foundElements.get(i).getText());
-        }
-        return foundResults;
+        return foundElements.stream().map(WebElement::getText).collect(Collectors.toList());
     }
-
 }

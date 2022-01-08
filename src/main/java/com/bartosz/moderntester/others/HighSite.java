@@ -11,23 +11,23 @@ public class HighSite {
 
     public HighSite(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
-@FindBy(css = "#scroll-button")
+    @FindBy(css = "#scroll-button")
     private WebElement submitButton;
-@FindBy(xpath = "//li/a[contains(text(),'Others')]")
+    @FindBy(xpath = "//li/a[contains(text(),'Others')]")
     private WebElement othersDropdown;
-@FindBy(css = "#high-site-item")
+    @FindBy(css = "#high-site-item")
     private WebElement highSiteSite;
 
-public void goToHighSite() {
-    othersDropdown.click();
-    highSiteSite.click();
-}
-public void goToSubmitButton() {
-    Actions actions = new Actions(driver);
-    actions.moveToElement(submitButton).build().perform();
-}
+    public void goToHighSite() {
+        othersDropdown.click();
+        highSiteSite.click();
+    }
 
+    public void goToSubmitButton() {
+        Actions actions = new Actions(driver);
+        actions.moveToElement(submitButton).build().perform();
+    }
 }

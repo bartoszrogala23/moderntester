@@ -15,7 +15,6 @@ public abstract class BaseInteractionsTest {
     protected Selectable selectable;
     protected Sortable sortable;
 
-
     @BeforeMethod
     public void setup() {
         WebDriverManager.chromedriver().setup();
