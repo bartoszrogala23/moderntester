@@ -13,7 +13,5 @@ public class ClickItemsInOrderTests extends BaseInteractionsTest {
         String expectedResult = "#6";
         String actualResult = selectable.result.getText();
         assertThat(actualResult).isEqualTo(expectedResult);
-//        TODO: after each click add .getText to the new list and compare it with expected result;
     }
-
 }

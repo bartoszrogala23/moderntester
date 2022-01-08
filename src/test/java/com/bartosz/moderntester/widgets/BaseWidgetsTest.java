@@ -17,8 +17,6 @@ public abstract class BaseWidgetsTest {
     protected Slider slider;
     protected Spinner spinner;
 
-
-
     @BeforeMethod
     public void setup() {
         WebDriverManager.chromedriver().setup();

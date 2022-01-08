@@ -6,14 +6,13 @@ import org.testng.annotations.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class spinnerAlertTest extends BaseWidgetsTest {
+    String expectedValue = "23";
 
     @Test
     public void getValueButtonTest() {
         widgets.goToSpinner();
-        String expectedValue = "23";
         spinner.spinnerField.sendKeys(expectedValue);
         spinner.getValueAsAlert();
         assertThat(spinner.getStatusfromAlert()).isEqualTo(expectedValue);
     }
-
 }

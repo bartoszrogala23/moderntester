@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SelectAllElementsTest extends BaseInteractionsTest {
-
     @Test
     public void selectAllElementsTest() {
         interactions.goToSelectable();
@@ -15,5 +14,4 @@ public class SelectAllElementsTest extends BaseInteractionsTest {
         String actualResult = selectable.result.getText();
         assertThat(actualResult).isEqualTo(expectedResult);
     }
-
 }
