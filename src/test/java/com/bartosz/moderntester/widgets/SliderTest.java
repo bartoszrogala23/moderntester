@@ -13,6 +13,5 @@ public class SliderTest extends BaseWidgetsTest {
         slider.moveHandler();
         String after = slider.getHandlerPosition();
         assertThat(before).isNotEqualTo(after);
-
     }
 }
