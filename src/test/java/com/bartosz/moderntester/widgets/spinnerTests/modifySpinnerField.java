@@ -1,7 +1,8 @@
 package com.bartosz.moderntester.widgets.spinnerTests;
 
 import com.bartosz.moderntester.widgets.BaseWidgetsTest;
-import org.testng.annotations.Test;
+import org.junit.Test;
+
 
 import static org.assertj.core.api.Assertions.assertThat;
 

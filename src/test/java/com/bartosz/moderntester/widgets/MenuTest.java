@@ -1,6 +1,7 @@
 package com.bartosz.moderntester.widgets;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
+
 
 public class MenuTest extends BaseWidgetsTest{
     @Test

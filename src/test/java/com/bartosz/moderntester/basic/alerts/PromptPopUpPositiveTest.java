@@ -1,7 +1,8 @@
 package com.bartosz.moderntester.basic.alerts;
 
 import com.bartosz.moderntester.basic.BaseBasicTest;
-import org.testng.annotations.Test;
+import org.junit.Test;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class PromptPopUpPositiveTest extends BaseBasicTest {

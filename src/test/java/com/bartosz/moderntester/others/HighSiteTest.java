@@ -1,6 +1,6 @@
 package com.bartosz.moderntester.others;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 public class HighSiteTest extends  BaseOtherTest{
     @Test

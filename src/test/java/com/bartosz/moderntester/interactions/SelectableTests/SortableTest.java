@@ -1,7 +1,8 @@
 package com.bartosz.moderntester.interactions.SelectableTests;
 
 import com.bartosz.moderntester.interactions.BaseInteractionsTest;
-import org.testng.annotations.Test;
+import org.junit.Test;
+
 import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 

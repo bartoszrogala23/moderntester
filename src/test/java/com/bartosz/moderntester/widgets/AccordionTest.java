@@ -1,6 +1,6 @@
 package com.bartosz.moderntester.widgets;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class AccordionTest extends BaseWidgetsTest {

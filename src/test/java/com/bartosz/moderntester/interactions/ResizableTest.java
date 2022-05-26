@@ -1,7 +1,7 @@
 package com.bartosz.moderntester.interactions;
 
+import org.junit.Test;
 import org.openqa.selenium.Dimension;
-import org.testng.annotations.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ResizableTest extends BaseInteractionsTest {
