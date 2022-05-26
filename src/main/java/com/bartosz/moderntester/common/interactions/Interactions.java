@@ -3,6 +3,7 @@ package com.bartosz.moderntester.common.interactions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class Interactions {
@@ -12,6 +13,9 @@ public class Interactions {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
+    @FindBy(id = "prompt-label")
+    private WebElement promptLabel;
 
     public WebElement selectDropdown(String dropdownName) {
         return driver.findElement

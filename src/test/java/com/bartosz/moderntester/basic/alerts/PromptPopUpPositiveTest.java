@@ -12,7 +12,7 @@ public class PromptPopUpPositiveTest extends BaseBasicTest {
     @Test
     public void PopUpPositiveTest() {
         basic.goToAlerts();
-        alerts.fillThePopUpWithName();
+        alerts.fillThePopUpWithName("Sample name");
         assertThat(expectedMessage).isEqualTo(actualResult);
     }
 }

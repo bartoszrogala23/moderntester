@@ -42,15 +42,8 @@ public class Alerts {
         driver.switchTo().alert().dismiss();
     }
 
-    public void clickSimpleAlert() {
-        simpleAlert.click();
-        wait.until(ExpectedConditions.alertIsPresent());
-        driver.switchTo().alert().accept();
-    }
-
-    public void fillThePopUpWithName() {
-        promptPopUp.click();
-        driver.switchTo().alert().sendKeys("James Bond");
+    public void fillThePopUpWithName(String Name) {
+        driver.switchTo().alert().sendKeys(Name);
         driver.switchTo().alert().accept();
     }
 
