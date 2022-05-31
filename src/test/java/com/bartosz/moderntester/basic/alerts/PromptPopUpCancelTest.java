@@ -10,7 +10,7 @@ public class PromptPopUpCancelTest extends BaseBasicTest {
 
     @Test
     public void CancelThePopUp() {
-        basic.goToAlerts();
+        basicPage.goToAlerts();
         alerts.CancelThePopUpWithName();
         assertThat(expectedMessage).isEqualTo(actualResult);
     }

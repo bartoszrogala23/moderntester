@@ -2,9 +2,6 @@ package com.bartosz.moderntester.basic.alerts;
 
 import com.bartosz.moderntester.basic.BaseBasicTest;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 import static com.bartosz.moderntester.common.constants.Announcements.OK_BUTTON_PRESSED;
 import static com.bartosz.moderntester.common.constants.Announcements.PROMPT_CANCELLED;
@@ -21,28 +18,33 @@ public class AlertsTest extends BaseBasicTest {
         interactions.selectDropdown(BASIC).click();
         interactions.selectDropdownItem(ALERTS).click();
         interactions.selectButton(SIMPLE_ALERT).click();
-        final String actualValue = interactions.getAlertText();
-        assertThat(actualValue)
+        final String alertText = interactions.getAlertText();
+        assertThat(alertText)
+                .isEqualTo(OK_BUTTON_PRESSED);
+        final String promptText = basicPage.getPromptLabelText();
+        assertThat(promptText)
                 .isEqualTo(OK_BUTTON_PRESSED);
     }
 
     @Test
     public void PromptAlertBoxPositiveTest() {
-        basic.goToAlerts();
-        final String name = faker.name().fullName();
+        interactions.selectDropdown(BASIC).click();
+        interactions.selectDropdownItem(ALERTS).click();
         interactions.selectButton(PROMPT_POP_UP).click();
+        final String name = faker.name().fullName();
         alerts.fillThePopUpWithName(name);
-        final String actualValue = driver.findElement(By.id("prompt-label")).getText();
+        final String actualValue = basicPage.getPromptLabelText();
         assertThat(actualValue)
                 .isEqualTo("Hello " + name + "! How are you today?");
     }
 
     @Test
     public void PromptAlertBoxNegativeTest() {
-        basic.goToAlerts();
+        interactions.selectDropdown(BASIC).click();
+        interactions.selectDropdownItem(ALERTS).click();
         interactions.selectButton(PROMPT_POP_UP).click();
-        driver.switchTo().alert().dismiss();
-        final String actualValue = driver.findElement(By.id("prompt-label")).getText();
+        interactions.dismissAlert();
+        final String actualValue = basicPage.getPromptLabelText();
         assertThat(actualValue)
                 .isEqualTo(PROMPT_CANCELLED);
     }

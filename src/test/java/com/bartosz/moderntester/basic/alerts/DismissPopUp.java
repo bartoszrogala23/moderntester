@@ -11,7 +11,7 @@ public class DismissPopUp extends BaseBasicTest {
 
     @Test
     public void dismissAlertTest() {
-        basic.goToAlerts();
+        basicPage.goToAlerts();
         alerts.dismissPopUp();
         assertThat(expectedMessage).isEqualTo(actualResult);
     }

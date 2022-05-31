@@ -11,7 +11,7 @@ public class ConfirmPopUpTest extends BaseBasicTest {
 
     @Test
     public void confirmPopUpTest() {
-        basic.goToAlerts();
+        basicPage.goToAlerts();
         alerts.cofnirmPopUp();
 //        assertThat(expectedMessage).isEqualTo(actualResult);
     }

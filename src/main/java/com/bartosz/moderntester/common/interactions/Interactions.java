@@ -36,4 +36,8 @@ public class Interactions {
     public String getAlertText() {
         return driver.switchTo().alert().getText();
     }
+
+    public void dismissAlert() {
+        driver.switchTo().alert().dismiss();
+    }
 }

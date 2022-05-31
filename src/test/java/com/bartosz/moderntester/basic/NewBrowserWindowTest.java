@@ -8,7 +8,7 @@ public class NewBrowserWindowTest extends BaseBasicTest{
 
     @Test
     public void newBrowserWindowTest()  {
-        basic.goToWidnowsTabs();
+        basicPage.goToWindowsTabs();
         String before = windowsTabs.getURL();
         windowsTabs.goToNewBrowserWindow();
         String after = windowsTabs.getURL();
