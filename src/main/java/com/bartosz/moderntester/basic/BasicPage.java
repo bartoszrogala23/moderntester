@@ -14,7 +14,10 @@ public class BasicPage {
         PageFactory.initElements(driver, this);
     }
 
-    public By byPromptLabel = By.className("lead");
+    public static By bySimpleAlert = By.id("simple-alert-label");
+    public static By byPromptLabel = By.id("prompt-label");
+    public static By byConfirmLabel = By.id("confirm-label");
+    public static By byDalayedAlert = By.id("delayed-alert-label");
 
     @FindBy(css = "#alerts-item")
     private WebElement alertsSelect;
@@ -35,8 +38,8 @@ public class BasicPage {
         windowsTabsButton.click();
     }
 
-    public String getPromptLabelText() {
-        return driver.findElement(byPromptLabel).getText();
+    public String getLeadText(By by) {
+        return driver.findElement(by).getText();
     }
 }
 

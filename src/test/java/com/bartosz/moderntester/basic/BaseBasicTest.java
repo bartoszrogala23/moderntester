@@ -6,6 +6,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -16,6 +18,7 @@ public abstract class BaseBasicTest {
     public WindowsTabs windowsTabs;
     public Interactions interactions;
     public Faker faker;
+    public Wait wait;
 
     @Before
     public void setup() {
@@ -28,7 +31,12 @@ public abstract class BaseBasicTest {
         alerts = new Alerts(driver);
         windowsTabs = new WindowsTabs(driver);
         interactions = new Interactions(driver);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.get("https://seleniumui.moderntester.pl/");
     }
 
+
+    public void acceptAlert() {
+        driver.switchTo().alert().accept();
+    }
 }
