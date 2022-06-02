@@ -13,7 +13,6 @@ import static com.bartosz.moderntester.common.constants.Buttons.PROMPT_POP_UP;
 import static com.bartosz.moderntester.common.constants.Buttons.SIMPLE_ALERT;
 import static com.bartosz.moderntester.common.constants.DropdownItems.ALERTS;
 import static com.bartosz.moderntester.common.constants.Dropdowns.BASIC;
-import static org.assertj.core.api.Assertions.assertThat;
 
 public class AlertsTest extends BaseBasicTest {
 
@@ -61,9 +60,16 @@ public class AlertsTest extends BaseBasicTest {
         interactions.selectDropdown(BASIC).click();
         interactions.selectDropdownItem(ALERTS).click();
         interactions.selectButton(PROMPT_POP_UP).click();
+        final String alertText = interactions.getAlertText();
+
+        softly.assertThat(alertText)
+                .isEqualTo(ENTER_NAME);
+
         interactions.dismissAlert();
         final String actualValue = basicPage.getLeadText(byPromptLabel);
-        assertThat(actualValue)
+
+        softly.assertThat(actualValue)
                 .isEqualTo(PROMPT_CANCELLED);
+        softly.assertAll();
     }
 }
