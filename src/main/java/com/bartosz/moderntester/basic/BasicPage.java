@@ -1,6 +1,5 @@
 package com.bartosz.moderntester.basic;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,32 +13,43 @@ public class BasicPage {
         PageFactory.initElements(driver, this);
     }
 
-    public static By bySimpleAlert = By.id("simple-alert-label");
-    public static By byPromptLabel = By.id("prompt-label");
-    public static By byConfirmLabel = By.id("confirm-label");
-    public static By byDalayedAlert = By.id("delayed-alert-label");
-
-    @FindBy(css = "#alerts-item")
-    private WebElement alertsSelect;
     @FindBy(xpath = "//a[@class='nav-link dropdown-toggle'] [contains(text(),'Basic')]")
     private WebElement basicDropdown;
     @FindBy(css = "#windows-tabs-item")
-    private WebElement windowsTabsButton;
+    private WebElement windowTabButton;
+    @FindBy(id = "prompt-label")
+    private WebElement promptLabel;
+    @FindBy(id = "confirm-label")
+    private WebElement confirmLabel;
+    @FindBy(id = "simple-alert-label")
+    private WebElement simpleAlertLabel;
+    @FindBy(id = "delayed-alert-label")
+    private WebElement delayedAlertLabel;
 
-
-
-    public void goToAlerts() {
-        basicDropdown.click();
-        alertsSelect.click();
+    public void fillThePopUpWithName(String name) {
+        driver.switchTo().alert().sendKeys(name);
+        driver.switchTo().alert().accept();
     }
 
     public void goToWindowsTabs() {
         basicDropdown.click();
-        windowsTabsButton.click();
+        windowTabButton.click();
     }
 
-    public String getLeadText(By by) {
-        return driver.findElement(by).getText();
+    public String getPromptLabelText() {
+        return promptLabel.getText();
+    }
+
+    public String getConfirmLabelText() {
+        return confirmLabel.getText();
+    }
+
+    public String getDelayedLabelText() {
+        return delayedAlertLabel.getText();
+    }
+
+    public String getSimpleAlertLabel() {
+        return simpleAlertLabel.getText();
     }
 }
 

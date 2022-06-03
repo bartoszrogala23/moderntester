@@ -36,4 +36,9 @@ public class Interactions {
     public void dismissAlert() {
         driver.switchTo().alert().dismiss();
     }
+
+    public void acceptAlert() {
+        driver.switchTo().alert().accept();
+    }
+
 }
